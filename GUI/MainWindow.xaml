@@ -10,19 +10,19 @@
         <GroupBox Header="Entrada" Height="51" VerticalAlignment="Top" Margin="10,5,10,0">
             <Grid>
                 <Label Content="Seleccionar dataset:&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,2,0,0" Height="23" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="19" Margin="115,6,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="216" TextChanged="TextBox_TextChanged" TextAlignment="Right"/>
-                <Button Content="Seleccionar archivo..." Margin="336,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135"/>
+                <TextBox x:Name="dataSetFile_txt" HorizontalAlignment="Left" Height="19" Margin="115,6,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="216" TextChanged="TextBox_TextChanged" TextAlignment="Right"/>
+                <Button x:Name="dataSetFile_btn" Content="Seleccionar archivo..." Margin="336,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Pruebas" Height="94" Margin="10,61,10,0" VerticalAlignment="Top">
             <Grid>
-                <CheckBox Content="Usar archivo de pruebas externo:" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="19" Margin="209,48,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="122" TextChanged="TextBox_TextChanged" TextAlignment="Right"/>
-                <Button Content="Seleccionar archivo..." Margin="336,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135"/>
-                <RadioButton Content="Validación simple:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <RadioButton Content="Validación cruzada:" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="externText_chk" Content="Usar archivo de pruebas externo:" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Checked="externText_chk_Checked" Unchecked="externText_chk_Unchecked"/>
+                <TextBox x:Name="testFile_txt" HorizontalAlignment="Left" Height="19" Margin="209,48,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="122" TextChanged="TextBox_TextChanged" TextAlignment="Right" IsEnabled="False"/>
+                <Button x:Name="testFile_btn" Content="Seleccionar archivo..." Margin="336,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" IsEnabled="False"/>
+                <RadioButton x:Name="simpleValidation_rad" Content="Validación simple:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="crossedValidation_rad" Content="Validación cruzada:" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
                 <TextBox HorizontalAlignment="Left" Height="19" Margin="135,28,0,0" TextWrapping="Wrap" Text="50" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" IsEnabled="False" TextAlignment="Center"/>
-                <TextBox HorizontalAlignment="Left" Height="19" Margin="135,8,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
+                <TextBox x:Name="simpleValidationValue_txt" HorizontalAlignment="Left" Height="19" Margin="135,8,0,0" TextWrapping="Wrap" Text="60" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
                 <Label Content="%" HorizontalAlignment="Left" Margin="155,4,0,0" VerticalAlignment="Top" Width="20"/>
                 <Label Content="%" HorizontalAlignment="Left" Margin="155,24,0,0" VerticalAlignment="Top" Width="20"/>
             </Grid>
@@ -30,10 +30,10 @@
         <GroupBox Header="Discretización" Height="50" Margin="10,160,10,0" VerticalAlignment="Top">
             <Grid>
                 <Label Content="Intervalo de discretización:&#xA;" HorizontalAlignment="Left" Margin="0,2,0,0" Height="23" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="19" Margin="151,6,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
+                <TextBox x:Name="intervalValue_txt" HorizontalAlignment="Left" Height="19" Margin="151,6,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
             </Grid>
         </GroupBox>
-        <Button Content="Comenzar análisis" Margin="366,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132"/>
-        <Button Content="Limpiar valores" Margin="10,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
+        <Button x:Name="start_btn" Content="Comenzar análisis" Margin="366,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132"/>
+        <Button x:Name="clear_btn" Content="Limpiar valores" Margin="10,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Click="Button_Click"/>
     </Grid>
 </Window>

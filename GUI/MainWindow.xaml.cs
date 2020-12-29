@@ -29,5 +29,35 @@ namespace GUI
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            dataSetFile_txt.Text = "dataset.csv";
+            testFile_txt.Text = "dataset.csv";
+            intervalValue_txt.Text = "0";
+            simpleValidationValue_txt.Text = "60";
+            simpleValidation_rad.IsChecked = false;
+            crossedValidation_rad.IsChecked = false;
+            externText_chk.IsChecked = false;
+        }
+
+        private void externText_chk_Checked(object sender, RoutedEventArgs e)
+        {
+                simpleValidationValue_txt.IsEnabled = false;
+                simpleValidation_rad.IsEnabled = false;
+                crossedValidation_rad.IsEnabled = false;
+                testFile_btn.IsEnabled = true;
+                testFile_txt.IsEnabled = true;
+
+        }
+
+        private void externText_chk_Unchecked(object sender, RoutedEventArgs e)
+        {
+            simpleValidationValue_txt.IsEnabled = true;
+            simpleValidation_rad.IsEnabled = true;
+            crossedValidation_rad.IsEnabled = true;
+            testFile_btn.IsEnabled = false;
+            testFile_txt.IsEnabled = false;
+        }
     }
 }
