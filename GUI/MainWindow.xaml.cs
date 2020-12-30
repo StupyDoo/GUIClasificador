@@ -43,12 +43,11 @@ namespace GUI
 
         private void externText_chk_Checked(object sender, RoutedEventArgs e)
         {
-                simpleValidationValue_txt.IsEnabled = false;
-                simpleValidation_rad.IsEnabled = false;
-                crossedValidation_rad.IsEnabled = false;
-                testFile_btn.IsEnabled = true;
-                testFile_txt.IsEnabled = true;
-
+            simpleValidationValue_txt.IsEnabled = false;
+            simpleValidation_rad.IsEnabled = false;
+            crossedValidation_rad.IsEnabled = false;
+            testFile_btn.IsEnabled = true;
+            testFile_txt.IsEnabled = true;
         }
 
         private void externText_chk_Unchecked(object sender, RoutedEventArgs e)
@@ -58,6 +57,12 @@ namespace GUI
             crossedValidation_rad.IsEnabled = true;
             testFile_btn.IsEnabled = false;
             testFile_txt.IsEnabled = false;
+        }
+
+        private void start_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Results results = new Results();
+            results.Show();
         }
     }
 }
