@@ -11,14 +11,14 @@
             <Grid>
                 <Label Content="Seleccionar dataset:&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,2,0,0" Height="23" VerticalAlignment="Top"/>
                 <TextBox x:Name="dataSetFile_txt" HorizontalAlignment="Left" Height="19" Margin="115,6,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="216" TextChanged="TextBox_TextChanged" TextAlignment="Right"/>
-                <Button x:Name="dataSetFile_btn" Content="Seleccionar archivo..." Margin="336,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135"/>
+                <Button x:Name="dataSetFile_btn" Content="Seleccionar archivo..." Margin="336,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" Click="dataSetFile_btn_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Pruebas" Height="94" Margin="10,61,10,0" VerticalAlignment="Top">
             <Grid>
                 <CheckBox x:Name="externText_chk" Content="Usar archivo de pruebas externo:" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Checked="externText_chk_Checked" Unchecked="externText_chk_Unchecked"/>
                 <TextBox x:Name="testFile_txt" HorizontalAlignment="Left" Height="19" Margin="209,48,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="122" TextChanged="TextBox_TextChanged" TextAlignment="Right" IsEnabled="False"/>
-                <Button x:Name="testFile_btn" Content="Seleccionar archivo..." Margin="336,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" IsEnabled="False"/>
+                <Button x:Name="testFile_btn" Content="Seleccionar archivo..." Margin="336,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" IsEnabled="False" Click="testFile_btn_Click"/>
                 <RadioButton x:Name="simpleValidation_rad" Content="Validación simple:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                 <RadioButton x:Name="crossedValidation_rad" Content="Validación cruzada:" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top"/>
                 <TextBox HorizontalAlignment="Left" Height="19" Margin="135,28,0,0" TextWrapping="Wrap" Text="50" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" IsEnabled="False" TextAlignment="Center"/>

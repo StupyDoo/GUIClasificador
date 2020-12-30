@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Microsoft.Win32;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -63,6 +64,22 @@ namespace GUI
         {
             Results results = new Results();
             results.Show();
+        }
+
+        private void dataSetFile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv";
+            if (openFileDialog.ShowDialog() == true)
+                dataSetFile_txt.Text = openFileDialog.FileName;
+        }
+
+        private void testFile_btn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv";
+            if (openFileDialog.ShowDialog() == true)
+                testFile_txt.Text = openFileDialog.FileName;
         }
     }
 }
