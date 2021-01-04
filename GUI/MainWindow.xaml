@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Clasificador Bayes Ingenuo" Height="279.397" Width="520.837">
+        Title="Clasificador Bayes Ingenuo" Height="358.397" Width="520.837">
     <Grid>
-        <GroupBox Header="Entrada" Height="51" VerticalAlignment="Top" Margin="10,5,10,0">
+        <GroupBox Header="Entrada" Height="76" VerticalAlignment="Top" Margin="10,5,10,0">
             <Grid>
                 <Label Content="Seleccionar dataset:&#xD;&#xA;" HorizontalAlignment="Left" Margin="0,2,0,0" Height="23" VerticalAlignment="Top"/>
                 <TextBox x:Name="dataSetFile_txt" HorizontalAlignment="Left" Height="19" Margin="115,6,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="216" TextChanged="TextBox_TextChanged" TextAlignment="Right"/>
                 <Button x:Name="dataSetFile_btn" Content="Seleccionar archivo..." Margin="336,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135" Click="dataSetFile_btn_Click"/>
+                <RadioButton x:Name="attribBeginning_rad" Content="Inicio" HorizontalAlignment="Left" Margin="159,34,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <Label Content="Ubicación del atributo clase:" HorizontalAlignment="Left" Margin="0,28,0,0" Height="23" VerticalAlignment="Top"/>
+                <RadioButton x:Name="attribEnding_rad" Content="Final" HorizontalAlignment="Left" Margin="211,34,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.432,0.667"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Pruebas" Height="94" Margin="10,61,10,0" VerticalAlignment="Top">
+        <GroupBox Header="Pruebas" Height="94" Margin="10,86,10,0" VerticalAlignment="Top">
             <Grid>
                 <CheckBox x:Name="externText_chk" Content="Usar archivo de pruebas externo:" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Checked="externText_chk_Checked" Unchecked="externText_chk_Unchecked"/>
                 <TextBox x:Name="testFile_txt" HorizontalAlignment="Left" Height="19" Margin="209,48,0,0" TextWrapping="Wrap" Text="dataset.csv" VerticalAlignment="Top" Width="122" TextChanged="TextBox_TextChanged" TextAlignment="Right" IsEnabled="False"/>
@@ -27,13 +30,19 @@
                 <Label Content="%" HorizontalAlignment="Left" Margin="155,24,0,0" VerticalAlignment="Top" Width="20"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Discretización" Height="50" Margin="10,160,10,0" VerticalAlignment="Top">
+        <GroupBox Header="Discretización" Height="107" Margin="10,185,10,0" VerticalAlignment="Top">
             <Grid>
-                <Label Content="Intervalo de discretización:&#xA;" HorizontalAlignment="Left" Margin="0,2,0,0" Height="23" VerticalAlignment="Top"/>
-                <TextBox x:Name="intervalValue_txt" HorizontalAlignment="Left" Height="19" Margin="151,6,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
+                <Label Content="Intervalo de discretización:&#xA;" HorizontalAlignment="Left" Margin="0,28,0,0" Height="23" VerticalAlignment="Top"/>
+                <TextBox x:Name="intervalValue_txt" HorizontalAlignment="Left" Height="19" Margin="156,32,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center" RenderTransformOrigin="1.5,0.105"/>
+                <Label Content="Tipo de discretización:&#xA;" HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Margin="0,2,0,0"/>
+                <RadioButton x:Name="equalInterval_rad" Content="Intervalos iguales" HorizontalAlignment="Left" Margin="133,8,0,0" VerticalAlignment="Top" IsChecked="True"/>
+                <RadioButton x:Name="equalWidth_rad" Content="Anchos iguales" HorizontalAlignment="Left" Margin="249,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.432,0.667"/>
+                <RadioButton x:Name="noDiscretization_rad" Content="Ninguna" HorizontalAlignment="Left" Margin="352,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.432,0.667"/>
+                <Label x:Name="Cantidad_de_valores_por_ancho" Content="Cantidad de valores por ancho:&#xA;" HorizontalAlignment="Left" Margin="0,52,0,0" Height="23" VerticalAlignment="Top"/>
+                <TextBox x:Name="widthValue_txt" HorizontalAlignment="Left" Height="19" Margin="177,56,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="20" TextChanged="TextBox_TextChanged" TextAlignment="Center" RenderTransformOrigin="1.5,0.105"/>
             </Grid>
         </GroupBox>
-        <Button x:Name="start_btn" Content="Comenzar análisis" Margin="366,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Click="start_btn_Click"/>
-        <Button x:Name="clear_btn" Content="Limpiar valores" Margin="10,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Click="Button_Click"/>
+        <Button x:Name="start_btn" Content="Comenzar análisis" Margin="366,297,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132" Click="start_btn_Click"/>
+        <Button x:Name="clear_btn" Content="Limpiar valores" Margin="10,297,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Click="Button_Click"/>
     </Grid>
 </Window>
